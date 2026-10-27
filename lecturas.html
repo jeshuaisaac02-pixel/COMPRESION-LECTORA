@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturas - Comprensión Lectora</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #081225;
+            color: #dce6ff;
+        }
+
+        header {
+            background: #101f42;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid #ffd54f;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffd54f;
+            font-size: 42px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: #101f42;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #263e70;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: #ffd54f;
+        }
+
+        .tarjeta h2 {
+            color: #ffd54f;
+        }
+
+        .tarjeta p {
+            line-height: 1.6;
+        }
+
+        button {
+            background: #ffd54f;
+            color: #081225;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #fff176;
+        }
+
+        .lectura-completa {
+            display: none;
+            background: #101f42;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #263e70;
+        }
+
+        .lectura-completa h1 {
+            color: #ffd54f;
+            text-align: center;
+        }
+
+        .imagen-lectura {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            margin: 25px auto;
+            border-radius: 12px;
+            border: 3px solid #ffd54f;
+        }
+
+        .texto {
+            background: #0b1831;
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .pregunta {
+            background: #0b1831;
+            padding: 18px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .pregunta h3 {
+            color: #ffd54f;
+        }
+
+        .pregunta label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .volver {
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        @media (max-width: 700px) {
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .lectura-completa {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Lecturas</h1>
+    <p>Lee, comprende y demuestra lo que aprendiste.</p>
+</header>
+
+<div class="contenedor">
+
+    <!-- SECCIÓN PRINCIPAL DE LECTURAS -->
+
+    <div id="menuLecturas" class="tarjetas">
+
+        <div class="tarjeta">
+            <h2>🗺️ El mapa perdido</h2>
+            <p>Una aventura comienza cuando Tomás encuentra un misterioso mapa.</p>
+            <button onclick="mostrarLectura('lectura1')">Leer historia</button>
+        </div>
+
+        <div class="tarjeta">
+            <h2>🚀 Viaje al espacio</h2>
+            <p>Una estudiante descubre algo inesperado durante una misión espacial.</p>
+            <button onclick="mostrarLectura('lectura2')">Leer historia</button>
+        </div>
+
+        <div class="tarjeta">
+            <h2>🎮 El videojuego misterioso</h2>
+            <p>Un videojuego extraño parece esconder un secreto.</p>
+            <button onclick="mostrarLectura('lectura3')">Leer historia</button>
+        </div>
+
+        <div class="tarjeta">
+            <h2>🌲 El secreto del bosque</h2>
+            <p>Dos amigos encuentran algo extraño durante una caminata.</p>
+            <button onclick="mostrarLectura('lectura4')">Leer historia</button>
+        </div>
+
+    </div>
+
+
+    <!-- LECTURA 1 -->
+
+    <section id="lectura1" class="lectura-completa">
+
+        <h1>🗺️ El mapa perdido</h1>
+
+        <!-- CAMBIA ESTA IMAGEN EN EL SRC -->
+        <img src="../recursos/imagen/mapa.jpg.jpg" class="imagen-lectura" alt="Imagen de El mapa perdido">
+
+        <div class="texto">
+            <p>
+                Tomás y su perro Max caminaban por un sendero cerca de su casa
+                cuando Max comenzó a ladrar junto a un árbol. Tomás se acercó
+                y encontró una pequeña caja enterrada entre las raíces.
+            </p>
+
+            <p>
+                Dentro de la caja había un mapa antiguo. El mapa mostraba un
+                lugar que Tomás nunca había visto y tenía una gran X marcada
+                cerca de una montaña.
+            </p>
+
+            <p>
+                Tomás decidió investigar. Al día siguiente preparó una mochila
+                y siguió el mapa junto con Max. Después de caminar durante
+                varias horas, encontraron una pequeña cueva escondida entre
+                los árboles.
+            </p>
+
+            <p>
+                Dentro de la cueva no había oro ni tesoros. Había una caja con
+                libros antiguos y fotografías de la zona. Tomás comprendió que
+                el verdadero tesoro era conocer la historia del lugar.
+            </p>
+        </div>
+
+        <div class="pregunta">
+            <h3>1. ¿Qué encontró Tomás?</h3>
+            <label><input type="radio" name="p1" value="a"> Un teléfono</label>
+            <label><input type="radio" name="p1" value="b"> Un mapa antiguo</label>
+            <label><input type="radio" name="p1" value="c"> Una bicicleta</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Quién acompañó a Tomás?</h3>
+            <label><input type="radio" name="p2" value="a"> Su hermano</label>
+            <label><input type="radio" name="p2" value="b"> Su amigo</label>
+            <label><input type="radio" name="p2" value="c"> Su perro Max</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Cuál era el verdadero tesoro?</h3>
+            <label><input type="radio" name="p3" value="a"> Conocer la historia del lugar</label>
+            <label><input type="radio" name="p3" value="b"> Encontrar dinero</label>
+            <label><input type="radio" name="p3" value="c"> Encontrar oro</label>
+        </div>
+
+        <button onclick="corregir(1)">Comprobar respuestas</button>
+        <div id="resultado1" class="resultado"></div>
+
+        <button class="volver" onclick="volver()">⬅ Volver a las lecturas</button>
+
+    </section>
+
+
+    <!-- LECTURA 2 -->
+
+    <section id="lectura2" class="lectura-completa">
+
+        <h1>🚀 Viaje al espacio</h1>
+
+        <!-- CAMBIA ESTA IMAGEN EN EL SRC -->
+        <img src="../recursos/imagen/espacio.jpg.jpe" class="imagen-lectura" alt="Imagen de Viaje al espacio">
+
+        <div class="texto">
+            <p>
+                Sofía siempre había soñado con viajar al espacio. Desde pequeña
+                observaba las estrellas y leía libros sobre planetas y galaxias.
+            </p>
+
+            <p>
+                Un día recibió la oportunidad de participar en una misión
+                espacial. Durante el viaje pudo observar la Tierra desde una
+                enorme ventana de la nave.
+            </p>
+
+            <p>
+                Sofía quedó sorprendida al ver lo pequeño que parecía nuestro
+                planeta desde el espacio. También comprendió la importancia de
+                cuidar la Tierra.
+            </p>
+
+            <p>
+                Cuando regresó a casa, decidió compartir su experiencia con
+                otros estudiantes para motivarlos a aprender más sobre ciencia
+                y astronomía.
+            </p>
+        </div>
+
+        <div class="pregunta">
+            <h3>1. ¿Qué le gustaba observar a Sofía?</h3>
+            <label><input type="radio" name="p4" value="a"> Las estrellas</label>
+            <label><input type="radio" name="p4" value="b"> Los edificios</label>
+            <label><input type="radio" name="p4" value="c"> Los automóviles</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Qué pudo observar desde la nave?</h3>
+            <label><input type="radio" name="p5" value="a"> Marte</label>
+            <label><input type="radio" name="p5" value="b"> La Tierra</label>
+            <label><input type="radio" name="p5" value="c"> La Luna solamente</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Qué decidió hacer al regresar?</h3>
+            <label><input type="radio" name="p6" value="a"> Dejar de estudiar</label>
+            <label><input type="radio" name="p6" value="b"> Mudarse a otro país</label>
+            <label><input type="radio" name="p6" value="c"> Compartir su experiencia</label>
+        </div>
+
+        <button onclick="corregir(2)">Comprobar respuestas</button>
+        <div id="resultado2" class="resultado"></div>
+
+        <button class="volver" onclick="volver()">⬅ Volver a las lecturas</button>
+
+    </section>
+
+
+    <!-- LECTURA 3 -->
+
+    <section id="lectura3" class="lectura-completa">
+
+        <h1>🎮 El videojuego misterioso</h1>
+
+        <!-- CAMBIA ESTA IMAGEN EN EL SRC -->
+        <img src="videojuego.jpg" class="imagen-lectura" alt="Imagen de El videojuego misterioso">
+
+        <div class="texto">
+            <p>
+                Daniel recibió un videojuego que nunca había visto antes.
+                La portada mostraba un personaje frente a una enorme puerta
+                misteriosa.
+            </p>
+
+            <p>
+                Al comenzar a jugar, Daniel descubrió que cada nivel tenía
+                pequeños acertijos. Los acertijos parecían estar relacionados
+                con lugares que él conocía.
+            </p>
+
+            <p>
+                Después de completar varios niveles, encontró un mensaje que
+                decía que debía observar cuidadosamente antes de tomar una
+                decisión.
+            </p>
+
+            <p>
+                Daniel comprendió que el juego no solamente buscaba entretenerlo,
+                sino también enseñarle a pensar y resolver problemas.
+            </p>
+        </div>
+
+        <div class="pregunta">
+            <h3>1. ¿Qué recibió Daniel?</h3>
+            <label><input type="radio" name="p7" value="a"> Un libro</label>
+            <label><input type="radio" name="p7" value="b"> Un videojuego</label>
+            <label><input type="radio" name="p7" value="c"> Una computadora</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Qué tenía cada nivel?</h3>
+            <label><input type="radio" name="p8" value="a"> Acertijos</label>
+            <label><input type="radio" name="p8" value="b"> Canciones</label>
+            <label><input type="radio" name="p8" value="c"> Fotografías</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Qué aprendió Daniel?</h3>
+            <label><input type="radio" name="p9" value="a"> A pensar y resolver problemas</label>
+            <label><input type="radio" name="p9" value="b"> A cocinar</label>
+            <label><input type="radio" name="p9" value="c"> A dibujar</label>
+        </div>
+
+        <button onclick="corregir(3)">Comprobar respuestas</button>
+        <div id="resultado3" class="resultado"></div>
+
+        <button class="volver" onclick="volver()">⬅ Volver a las lecturas</button>
+
+    </section>
+
+
+    <!-- LECTURA 4 -->
+
+    <section id="lectura4" class="lectura-completa">
+
+        <h1>🌲 El secreto del bosque</h1>
+
+        <!-- CAMBIA ESTA IMAGEN EN EL SRC -->
+        <img src="../recursos/imagen/secretodelbosque.jpg.jpg" class="imagen-lectura" alt="Imagen de El secreto del bosque">
+
+        <div class="texto">
+            <p>
+                Laura y Marcos decidieron caminar por un bosque cercano durante
+                una tarde. Mientras avanzaban, escucharon un sonido extraño
+                detrás de unos arbustos.
+            </p>
+
+            <p>
+                Se acercaron con cuidado y encontraron una pequeña construcción
+                de madera. La puerta estaba abierta y dentro había fotografías,
+                mapas y objetos antiguos.
+            </p>
+
+            <p>
+                Los dos amigos descubrieron que aquel lugar había sido utilizado
+                muchos años atrás por personas que estudiaban los animales y
+                las plantas del bosque.
+            </p>
+
+            <p>
+                Antes de regresar a casa, decidieron cuidar mejor el bosque y
+                contarle a otras personas la importancia de proteger la
+                naturaleza.
+            </p>
+        </div>
+
+        <div class="pregunta">
+            <h3>1. ¿Dónde estaban Laura y Marcos?</h3>
+            <label><input type="radio" name="p10" value="a"> En una ciudad</label>
+            <label><input type="radio" name="p10" value="b"> En un bosque</label>
+            <label><input type="radio" name="p10" value="c"> En una escuela</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Qué encontraron?</h3>
+            <label><input type="radio" name="p11" value="a"> Una casa moderna</label>
+            <label><input type="radio" name="p11" value="b"> Un automóvil</label>
+            <label><input type="radio" name="p11" value="c"> Una construcción de madera</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Qué decidieron hacer?</h3>
+            <label><input type="radio" name="p12" value="a"> Cuidar y proteger el bosque</label>
+            <label><input type="radio" name="p12" value="b"> Destruir la construcción</label>
+            <label><input type="radio" name="p12" value="c"> No regresar nunca</label>
+        </div>
+
+        <button onclick="corregir(4)">Comprobar respuestas</button>
+        <div id="resultado4" class="resultado"></div>
+
+        <button class="volver" onclick="volver()">⬅ Volver a las lecturas</button>
+
+    </section>
+
+</div>
+
+
+<script>
+
+    function mostrarLectura(id) {
+        document.getElementById("menuLecturas").style.display = "none";
+
+        document.querySelectorAll(".lectura-completa").forEach(function(lectura) {
+            lectura.style.display = "none";
+        });
+
+        document.getElementById(id).style.display = "block";
+        window.scrollTo(0, 0);
+    }
+
+
+    function volver() {
+        document.querySelectorAll(".lectura-completa").forEach(function(lectura) {
+            lectura.style.display = "none";
+        });
+
+        document.getElementById("menuLecturas").style.display = "grid";
+        window.scrollTo(0, 0);
+    }
+
+
+    function corregir(numero) {
+
+        let respuestas;
+        let correctas;
+
+        if (numero === 1) {
+            respuestas = ["b", "c", "a"];
+            correctas = ["p1", "p2", "p3"];
+        }
+
+        if (numero === 2) {
+            respuestas = ["a", "b", "c"];
+            correctas = ["p4", "p5", "p6"];
+        }
+
+        if (numero === 3) {
+            respuestas = ["b", "a", "a"];
+            correctas = ["p7", "p8", "p9"];
+        }
+
+        if (numero === 4) {
+            respuestas = ["b", "c", "a"];
+            correctas = ["p10", "p11", "p12"];
+        }
+
+        let puntos = 0;
+
+        for (let i = 0; i < correctas.length; i++) {
+
+            let seleccion = document.querySelector(
+                'input[name="' + correctas[i] + '"]:checked'
+            );
+
+            if (seleccion && seleccion.value === respuestas[i]) {
+                puntos++;
+            }
+        }
+
+        document.getElementById("resultado" + numero).innerHTML =
+            "Obtuviste " + puntos + " de 3 respuestas correctas.";
+    }
+
+</script>
+
+</body>
+</html>
